@@ -5,15 +5,16 @@ public class Estudiante {
     private int codigo;
     private String nombre;
     private String apellido;
-    private String materias;
+    private String[] materias;
     private Float[] notas;
     private String juicio;
+    private Float definitiva;
 
     public Estudiante(int codigo, String nombre, String apellido, String[] materias, Float[] notas) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.materias = String.valueOf(materias);
+        this.materias = materias;
         this.notas = notas;
     }
 
@@ -41,11 +42,11 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public String getMaterias() {
+    public String[] getMaterias() {
         return materias;
     }
 
-    public void setMaterias(String materias) {
+    public void setMaterias(String[] materias) {
         this.materias = materias;
     }
 
@@ -63,5 +64,13 @@ public class Estudiante {
 
     public void setJuicio(String juicio) {
         this.juicio = juicio;
+    }
+
+    public Float getDefinitiva() {
+        return definitiva;
+    }
+
+    public void setDefinitiva(Float definitiva) {
+        this.definitiva = definitiva;
     }
 }
