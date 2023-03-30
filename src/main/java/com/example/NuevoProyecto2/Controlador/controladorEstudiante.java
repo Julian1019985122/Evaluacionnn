@@ -14,7 +14,7 @@ public class controladorEstudiante {
 
     servicioEstudiante servicio=new servicioEstudiante();
 
-    @GetMapping("/ListarEstudiantes")
+    @GetMapping("/listarEstudiantes")
     public ArrayList<Estudiante> listar(){return servicio.listar();}
 
     @DeleteMapping("/eliminarEstudiante")
