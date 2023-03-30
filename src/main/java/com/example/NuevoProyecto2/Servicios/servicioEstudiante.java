@@ -9,11 +9,11 @@ public class servicioEstudiante {
     ArrayList<Estudiante> lista=new ArrayList<>();
 
     public servicioEstudiante(){
-        lista.add(new Estudiante(1,"Julian","Ospina", new String[]{"Español, matematicas, ciencias"}, new Float[]{1.5f, 3.8f, 4.5f}));
-        lista.add(new Estudiante(2,"Julia","unibio",new String[] {"matematicas", "Español", "ciencias"} ,new Float[] {2.5f,3.8f,4.9f}));
-        lista.add(new Estudiante(3,"Julio","Uribe",new String[] {"matematicas", "Español", "ciencias"} ,new Float[] {2.5f,3.8f,4.9f}));
-        lista.add(new Estudiante(4,"Juan","Escobar",new String[] {"matematicas", "Español", "ciencias"} ,new Float[] {2.5f,3.8f,4.9f}));
-        lista.add(new Estudiante(5,"Juana","Guzman",new String[] {"matematicas", "Español", "ciencias"} ,new Float[] {2.5f,3.8f,4.9f}));
+        lista.add(new Estudiante(1,"Julian","Ospina", new String[]{"Español, matematicas, ciencias"}, new float[]{1.5f, 3.0f, 1.5f},""));
+        lista.add(new Estudiante(2,"Julia","unibio",new String[] {"matematicas", "Español", "ciencias"} ,new float[] {2.5f,3.8f,4.9f},""));
+        lista.add(new Estudiante(3,"Julio","Uribe",new String[] {"matematicas", "Español", "ciencias"} ,new float[] {2.5f,3.8f,4.9f},""));
+        lista.add(new Estudiante(4,"Juan","Escobar",new String[] {"matematicas", "Español", "ciencias"} ,new float[] {2.5f,3.8f,4.9f},""));
+        lista.add(new Estudiante(5,"Juana","Guzman",new String[] {"matematicas", "Español", "ciencias"} ,new float[] {2.5f,3.8f,4.9f},""));
     }
 
     public ArrayList<Estudiante> listar(){
@@ -54,6 +54,34 @@ public class servicioEstudiante {
         }
 
         return lista;
+    }
+
+
+
+    public String ModificarMateria(Estudiante E){
+
+        boolean resp = false;
+
+        for (Estudiante Es : lista){
+
+            if (Es.getCodigo() == E.getCodigo()){
+
+                Es.setMaterias(E.getMaterias());
+
+                resp = true;
+            }
+        }
+
+        String respuesta = "";
+
+        if(resp == true){
+            respuesta = "Se han actualizado los datos";
+
+        }else{
+            respuesta = "No se han actualizado los datos";
+        }
+
+        return respuesta;
     }
 
 
